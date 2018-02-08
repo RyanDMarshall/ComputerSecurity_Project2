@@ -4,7 +4,7 @@ import random
 import string
 
 def find_sub(text):
-	or_found_idx = text.find("'||'")
+	or_found_idx = max(text.find("'||'"), text.find("'or'"), text.find("'Or'"), text.find("'oR'"), text.find("'OR'"))
 	next = text[or_found_idx+4]
 	return (or_found_idx != -1 and next.isdigit() and next != "0")
 
