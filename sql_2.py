@@ -4,8 +4,9 @@ import random
 import string
 
 def find_sub(text):
-	or_found_idx = (text.find("'||'")
-	return text[or_found_idx].is_digit()
+	or_found_idx = text.find("'||'")
+	next = text[or_found_idx+4]
+	return (or_found_idx != -1 and next.isdigit() and next != "0")
 
 i = 0
 string_found = 0
