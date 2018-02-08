@@ -12,7 +12,7 @@ i = 0
 string_found = 0
 
 while not string_found:
-	text = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(40)])
+	text = ''.join([random.choice(string.ascii_letters + string.digits) for n in xrange(100)])
 	md5_text = md5(text)
 	md5_text = md5_text.digest()
 	string_found = find_sub(md5_text)
