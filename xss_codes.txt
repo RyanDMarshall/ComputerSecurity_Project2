@@ -1,0 +1,21 @@
+xss_0:
+<script>
+$(document).ready(function)() {
+name = document.getElementById("logged-in-user").innerHTML;
+search = document.getElementByClassName("history-item" "list-group-item")[0].innerHTML;
+alert(name + ", " + search);
+}
+</script>
+xss_1:
+
+
+
+
+
+xss_2:
+
+
+
+
+
+xss_3:
